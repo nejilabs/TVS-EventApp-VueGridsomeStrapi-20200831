@@ -1,27 +1,38 @@
 <template>
-<v-app>
-  <v-app-bar app>
-    <v-toolbar-title>
-      <g-link to="/">E-vents</g-link>
-    </v-toolbar-title>
+  <v-app>
+    <v-app-bar app>
+      <v-toolbar-title>
+        <g-link to="/">E-vents</g-link>
+      </v-toolbar-title>
 
-    <v-text-field v-model="searchText" @click:clear="searchText=''" placeholder="Search" style="max-width:350px" class="ml-8" prepend-inner-icon="mdi-magnify" clearable outlined rounded dense hide-details />
+      <v-text-field
+        v-model="searchText"
+        @click:clear="searchText = ''"
+        placeholder="Search"
+        style="max-width: 350px"
+        class="ml-8"
+        prepend-inner-icon="mdi-magnify"
+        clearable
+        outlined
+        rounded
+        dense
+        hide-details
+      />
 
-    <v-spacer />
-    <v-btn>Create Event</v-btn>
-  </v-app-bar>
+      <v-spacer />
+      <v-btn>Create Event</v-btn>
+    </v-app-bar>
 
-  <v-main>
-    <v-container>
-      <v-row>
-        <v-col sm="6" offset-sm="3">
-          <slot :searchText="searchText" />
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-main>
-
-</v-app>
+    <v-main>
+      <v-container>
+        <v-row>
+          <v-col sm="6" offset-sm="3">
+            <slot :searchText="searchText" />
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <static-query>
@@ -37,10 +48,10 @@ query {
 export default {
   data() {
     return {
-      searchText: ''
-    }
-  }
-}
+      searchText: "",
+    };
+  },
+};
 </script>
 
 <style>

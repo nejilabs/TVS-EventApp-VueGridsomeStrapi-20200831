@@ -22,18 +22,18 @@
 </page-query>
 
 <script>
-import moment from 'moment';
+import moment from "moment";
 export default {
   metaInfo() {
     return {
-      title: this.$page.event.title
-    }
+      title: this.$page.event.title,
+    };
   },
 
   methods: {
     formatDate(date) {
       return moment(date).format("MMMM Do YYYY, h:mm a");
-    }
-  }
-}
+    },
+  },
+};
 </script>
